@@ -14,7 +14,7 @@ import format from 'date-fns/format';
 const styles = theme => ({
   root: {
     width: 300,
-    margin: theme.spacing.unit * 3,
+    margin: theme.spacing.unit * 2,
     zIndex: theme.zIndex.snackbar,
     overflow: 'hidden'
   },
@@ -50,9 +50,7 @@ const styles = theme => ({
     fontWeight: '600'
   },
   actionDivider: {
-    margin: `${theme.spacing.unit}px ${theme.spacing.unit}px 0px ${
-      theme.spacing.unit
-    }px`,
+    margin: `${theme.spacing.unit}px ${theme.spacing.unit}px 0px ${theme.spacing.unit}px`,
     padding: 0
   },
   notificationAppTitle: {
@@ -132,6 +130,7 @@ class Notification extends React.Component {
       expanded: false
     };
   }
+
   componentWillMount() {
     if (this.props.timeout) {
       this.autoHideTimeout = setTimeout(() => {
@@ -139,6 +138,7 @@ class Notification extends React.Component {
       }, this.props.timeout);
     }
   }
+  
   componentWillUnmount() {
     clearTimeout(this.autoHideTimeout);
   }
@@ -175,7 +175,8 @@ class Notification extends React.Component {
       hideCloseButton,
       expandContent,
       accent,
-      appTitle
+      appTitle,
+      id
     } = this.props;
 
     return (
@@ -200,7 +201,7 @@ class Notification extends React.Component {
                 <Typography
                   type="body1"
                   component="span"
-                  style={{color: accent}}
+                  style={{ color: accent }}
                   classes={{ body1: classes.appTitle }}
                 >
                   {appTitle}
@@ -216,7 +217,7 @@ class Notification extends React.Component {
                   <IconButton
                     className={classes.smallIconButton}
                     onClick={this.handleExpandContent}
-                    style={{color: accent}}
+                    style={{ color: accent }}
                     disableRipple
                   >
                     <ExpandMore
@@ -226,8 +227,8 @@ class Notification extends React.Component {
                     />
                   </IconButton>
                 ) : (
-                  <span />
-                )}
+                    <span />
+                  )}
               </span>
             }
           />

@@ -21,7 +21,7 @@ Install and run the demo to see how Madeno looks. Spoiler alert: it looks nice.
 * The timestamp can no longer be disabled
 * Kill of ```CardHeader``` in favor of ```CardContent```
 * Clean-up for the files included in the build and package that can be downloaded from npm
-* Put a div arround avatars
+* Put a div around avatars
 * Revamped demo
 * Remove misplaced ```moment``` package
 * Use ```date-fns\format``` to get the default timestamp
